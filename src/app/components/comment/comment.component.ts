@@ -9,7 +9,7 @@ import {IComment} from "../../models/IComments";
 export class CommentComponent implements OnInit {
 
   @Input()
-  comment!: IComment;
+  comment: IComment;
   constructor() { }
 
   ngOnInit(): void {

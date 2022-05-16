@@ -1,1 +1,6 @@
-<div>{{comment.id}} {{comment.name}} {{comment.body}}</div>
+<div>{{comment.id}}
+  {{comment.body}}
+
+  <a [routerLink]="['comment-details',comment.id]">details</a>
+
+</div>

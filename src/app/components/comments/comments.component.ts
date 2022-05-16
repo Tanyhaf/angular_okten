@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {IComment} from "../../models/IComments";
 import {CommentService} from "../../services/comment.service";
 
@@ -9,7 +10,7 @@ import {CommentService} from "../../services/comment.service";
 })
 export class CommentsComponent implements OnInit {
 
-  comments!: IComment[];
+  comments: IComment[];
 
   constructor( private commentService: CommentService) { }
 
