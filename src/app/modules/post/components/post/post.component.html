@@ -1,1 +1,1 @@
-<div>{{post.id}} {{post.title}} {{post.body}} <button (click)="getDetails()">Details</button></div>
+<div><a routerLink="{{post.id}}" [state]="post"> {{post.title}}</a></div>

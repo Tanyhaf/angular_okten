@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+
 import {PostService} from "../../services";
 import {PostInterface} from "../../interfaces";
 
@@ -9,14 +10,14 @@ import {PostInterface} from "../../interfaces";
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-  post : PostInterface;
+  post: PostInterface;
 
-  constructor(private activatedRoute:ActivatedRoute, private postService:PostService) { }
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
+  }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id})=>{
-      this.postService.getById(id).subscribe(value => {this.post = value})
-    })
+    this.activatedRoute.data.subscribe(({data}) => this.post = data)
+
   }
 
 }

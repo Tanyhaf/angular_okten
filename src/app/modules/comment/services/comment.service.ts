@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+
 import {CommentInterface} from "../interfaces";
 import {urls} from "../../../urls";
 
@@ -9,14 +10,16 @@ import {urls} from "../../../urls";
 })
 export class CommentService {
 
-  constructor(private httpClient : HttpClient) {
+  constructor(private httpClient: HttpClient) {
 
   }
-  getAll(): Observable<CommentInterface[]>{
+
+  getAll(): Observable<CommentInterface[]> {
     return this.httpClient.get<CommentInterface[]>(urls.comments)
 
   }
-  getById( id:string): Observable<CommentInterface>{
+
+  getById(id: string): Observable<CommentInterface> {
     return this.httpClient.get<CommentInterface>(`${urls.comments}/${id}`)
   }
 }
